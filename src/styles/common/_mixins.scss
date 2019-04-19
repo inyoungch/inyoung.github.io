@@ -1,0 +1,86 @@
+//vars
+$white:#fff;
+$black:#111111;
+$blue: #2c67b2;
+$yellow: #cb863e;
+$gray_light:#9B9B9B;
+$gray:#748182;
+$bg:#F7F7F7;
+$circle:#f4f4f4;
+
+$netbook:1024px;
+$tablets:768px;
+$phones:480px;
+$iphone5:320px;
+
+//mixin
+
+@mixin dot{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+@function rem($px){
+    @return $px  / 16px+0rem;
+}
+
+// @mixin tablets{
+//     @media screen and (max-width:$tablets){
+//         @content;
+//     }
+// }
+
+// @mixin phones{
+//     @media screen and (max-width:$phones){
+//         @content;
+//     }
+// }
+
+// @mixin iphone5{
+//     @media screen and (max-width:$iphone5){
+//         @content;
+//     }
+// }
+
+@mixin phones{
+    @media (min-width:240px) and (max-width:480px){
+        @content;
+    }
+}
+
+@mixin tablets{
+    @media (min-width:479px) and (max-width:768px){
+        @content;
+    }
+}
+
+@mixin netbook{
+    @media (min-width:768px) and (max-width:1024px){
+        @content;
+    }
+}
+
+
+// for form
+
+.popup{
+    display: none;
+}
+
+.status-popup{
+    width: rem(250px);
+}
+
+.status-popup__inner{
+    text-align: center;
+    padding: rem(16px);
+}
+
+.status-popup__message{
+    font-size: rem(12px);
+}
